@@ -1,0 +1,162 @@
+<div class="contenedor-grid">
+    <div class="columna-1">
+        <h1>CSS Grid</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, tenetur perspiciatis! A sapiente ex nihil vel assumenda sequi fugit dicta. Quo omnis obcaecati, nulla saepe officiis hic illo harum! Facere!</p>
+    </div>
+
+    <div class="columna-2">
+        <h1>CSS Grid</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, tenetur perspiciatis! A sapiente ex nihil vel assumenda sequi fugit dicta. Quo omnis obcaecati, nulla saepe officiis hic illo harum! Facere!</p>
+    </div>
+
+    <div class="columna-3">
+        <h1>CSS Grid</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, tenetur perspiciatis! A sapiente ex nihil vel assumenda sequi fugit dicta. Quo omnis obcaecati, nulla saepe officiis hic illo harum! Facere!</p>
+    </div>
+</div>
+
+<style>
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    /* Extra pequeño (XS) - Estilos globales sin media query, aplicables a dispositivos <576px */
+    .contenedor-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, 1fr);
+        width: 100%;
+        height: 100vh;
+    }
+
+    .columna-1,
+    .columna-2,
+    .columna-3 {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .columna-1 {
+        background-color: #4E3E18;
+    }
+
+    .columna-2 {
+        background-color: #5E4A1D;
+    }
+
+    .columna-3 {
+        background-color: #6D5722;
+    }
+
+    h1, p {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif !important;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        margin-top: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Pequeño (S) - Para dispositivos >=576px */
+    @media (min-width: 576px) {}
+    
+    /* Mediano (M) - Para dispositivos >=768px */
+    @media (min-width: 768px) {
+        .contenedor-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+        }
+
+        .columna-1,
+        .columna-2,
+        .columna-3 {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 100px;
+        }
+        
+        /* 
+            1 => de arriba hacia abajo empiezo en la fila 1
+            1 => de izquierda a derecha empiezo en el borde izquierdo de la 1ª columna
+            6 => de arriba hacia abajo termino en el inicio de la 6ª fila
+            5 => de izquierda a derecha termino en el borde derecho de la 5ª columna
+
+            otra forma de escribirlo en css es de la siguiente manera
+            grid-area: 1 / 1 / 6 / 5; 
+        */
+        .columna-1 {
+            grid-row-start: 1;
+            grid-column-start: 1;
+            grid-row-end: 6;
+            grid-column-end: 5;
+        }
+
+        /* 
+            1 => de arriba hacia abajo empiezo en la fila 1
+            5 => de izquierda a derecha empiezo en el borde izquierdo de la 5ª columna
+            6 => de arriba hacia abajo termino en el inicio de la 6ª fila
+            9 => de izquierda a derecha termino en el borde derecho de la 9ª columna
+
+            otra forma de escribirlo en css es de la siguiente manera
+            grid-area: 1 / 5 / 6 / 9;
+        */    
+        .columna-2 { 
+            grid-row-start: 1;
+            grid-column-start: 5;
+            grid-row-end: 6;
+            grid-column-end: 9;
+        }
+
+        /* 
+            1 => de arriba hacia abajo empiezo en la fila 1
+            9 => de izquierda a derecha empiezo en el borde izquierdo de la 9ª columna
+            6 => de arriba hacia abajo termino en el inicio de la 6ª fila
+            13 => de izquierda a derecha termino en el borde derecho de la 13ª columna
+
+            otra forma de escribirlo en css es de la siguiente manera
+            grid-area: 1 / 9 / 6 / 13;
+        */          
+        .columna-3 {
+            grid-row-start: 1;
+            grid-column-start: 9;
+            grid-row-end: 6;
+            grid-column-end: 13;
+        }
+
+        p {
+            margin-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+    
+    /* Grande (L) - Para dispositivos >=992px */
+    @media (min-width: 992px) {}
+    
+    /* Extra grande (XL) - Para dispositivos >=1200px */
+    @media (min-width: 1200px) {}
+    
+    /* Extra extra grande (XXL) - Para dispositivos >=1536px */
+    @media (min-width: 1536px) {}
+</style>

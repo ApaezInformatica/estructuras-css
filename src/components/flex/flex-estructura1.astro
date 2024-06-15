@@ -1,0 +1,107 @@
+<div class="contenedor-flex">
+    <div class="hijo-1">
+        <h1>Flex Box</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, tenetur perspiciatis! A sapiente ex nihil vel assumenda sequi fugit dicta. Quo omnis obcaecati, nulla saepe officiis hic illo harum! Facere!</p>
+    </div>
+
+    <div class="hijo-2">
+        <h1>Flex Box</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, tenetur perspiciatis! A sapiente ex nihil vel assumenda sequi fugit dicta. Quo omnis obcaecati, nulla saepe officiis hic illo harum! Facere!</p>
+    </div>
+
+    <div class="hijo-3">
+        <h1>Flex Box</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus, tenetur perspiciatis! A sapiente ex nihil vel assumenda sequi fugit dicta. Quo omnis obcaecati, nulla saepe officiis hic illo harum! Facere!</p>
+    </div>
+</div>
+
+<style>
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Extra pequeño (XS) - Estilos globales sin media query, aplicables a dispositivos <576px */
+.contenedor-flex {
+    height: 100vh;
+    width: 100%;
+    margin: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color: #bbdefb;
+}
+
+.contenedor-flex > div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.hijo-1 {
+    background-color: #17454F;
+    flex: 1;
+}
+
+.hijo-2 {
+    background-color: #20606F;
+    flex: 1;
+}
+
+.hijo-3 {
+    background-color: #256E7E;
+    flex: 1;
+}
+
+h1, p {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif !important;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    margin-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Pequeño (S) - Para dispositivos >=576px */
+@media (min-width: 576px) {}
+
+/* Mediano (M) - Para dispositivos >=768px */
+    @media (min-width: 768px) {
+        .contenedor-flex {
+        flex-direction: row;
+    }
+
+    .contenedor-flex > div {
+        align-items: center;
+        justify-content: flex-end;
+        padding-bottom: 100px;
+    }
+
+    p {
+        margin-top: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
+
+/* Grande (L) - Para dispositivos >=992px */
+@media (min-width: 992px) {}
+
+/* Extra grande (XL) - Para dispositivos >=1200px */
+@media (min-width: 1200px) {}
+
+/* Extra extra grande (XXL) - Para dispositivos >=1536px */
+@media (min-width: 1536px) {}
+</style>
